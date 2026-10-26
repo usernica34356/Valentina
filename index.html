@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#eadcff">
+<title>Feliz cumpleaños Valentina</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;padding:0}body{font-family:Arial,Helvetica,sans-serif;min-height:100vh;background:linear-gradient(135deg,#ffdbea,#ddd2ff,#cfeaff);color:#5b4768;overflow-x:hidden}.app{position:relative;min-height:100vh;padding:28px 14px 120px;text-align:center;overflow:hidden}.top{position:relative;z-index:5;max-width:760px;margin:0 auto}.mini{font-size:16px;color:#846395;margin-top:6px}.title{font-size:38px;line-height:1.08;margin:10px 0 4px;color:#985ca3;text-shadow:0 3px 10px rgba(255,255,255,.75)}.name{font-size:28px;margin:0;color:#d0689c}.birthday{font-size:22px;margin:8px 0 34px;color:#608bc1}.stage{position:relative;display:flex;flex-direction:column;align-items:center;padding-bottom:48px}.envelope{position:relative;width:320px;max-width:88vw;height:210px;cursor:pointer;outline:none;filter:drop-shadow(0 18px 18px rgba(85,53,107,.22));animation:float 3s ease-in-out infinite}.envelope:focus{outline:4px solid rgba(111,76,150,.35);outline-offset:8px;border-radius:16px}.envbody{position:absolute;left:0;top:0;width:100%;height:100%;border-radius:10px 10px 20px 20px;background:#efbddb;overflow:hidden}.envbody:before{content:"";position:absolute;left:0;bottom:0;width:0;height:0;border-left:160px solid #f2afcf;border-top:105px solid transparent;border-bottom:105px solid #f2afcf}.envbody:after{content:"";position:absolute;right:0;bottom:0;width:0;height:0;border-right:160px solid #dfb6e9;border-top:105px solid transparent;border-bottom:105px solid #dfb6e9}.flap{position:absolute;left:0;top:0;width:0;height:0;border-left:160px solid transparent;border-right:160px solid transparent;border-top:125px solid #c8b0f5;transform-origin:top center;transition:transform .8s ease;z-index:6}.seal{position:absolute;left:50%;top:82px;margin-left:-29px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#9364c8;color:white;font-size:29px;z-index:8;box-shadow:0 5px 14px rgba(68,42,92,.25);transition:opacity .3s ease}.letter{display:none;width:min(390px,92vw);margin-top:28px;padding:24px 20px 28px;background:linear-gradient(180deg,#fff,#fff8fc);border:1px solid rgba(139,95,181,.18);border-radius:22px;box-shadow:0 16px 34px rgba(75,50,94,.16);position:relative;z-index:12}.letter h2{font-size:24px;color:#a65b98;margin:0 0 14px}.letter.show{display:block;animation:noteIn .8s cubic-bezier(.2,.75,.25,1) both}@keyframes noteIn{from{opacity:0;transform:translateY(-22px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}.message{font-size:16px;line-height:1.65;white-space:pre-wrap;min-height:220px}.cursor{display:inline-block;width:2px;height:16px;background:#8a60b5;margin-left:2px;vertical-align:-2px;animation:blink .7s infinite}.envelope.open{animation:none}.envelope.open .flap{transform:rotateX(180deg);z-index:1}.envelope.open .seal{opacity:0}.hint{margin-top:24px;font-weight:700;color:#765786;animation:pulse 1.6s infinite}.controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}.controls button{border:1px solid rgba(111,76,150,.22);background:rgba(255,255,255,.8);color:#694c7d;padding:10px 15px;border-radius:999px;font-size:15px;min-height:44px}.controls button:disabled{opacity:.5}.emailstatus{font-size:13px;margin-top:9px;min-height:20px;color:#7e6988}.corner{position:absolute;font-size:42px;z-index:2;pointer-events:none;animation:bloom 1.5s ease both}.c1{left:8px;top:8px}.c2{right:8px;top:8px;animation-delay:.25s}.c3{left:8px;bottom:8px;animation-delay:.5s}.c4{right:8px;bottom:8px;animation-delay:.75s}.word{position:absolute;z-index:1;font-weight:bold;color:rgba(117,77,144,.33);font-size:15px;pointer-events:none}.w1{left:3%;top:42%;transform:rotate(-12deg)}.w2{right:3%;top:47%;transform:rotate(11deg)}.w3{left:7%;bottom:18%;transform:rotate(7deg)}.w4{right:7%;bottom:16%;transform:rotate(-7deg)}.sticker{position:absolute;z-index:3;width:82px;height:82px;border-radius:22px;display:flex;align-items:center;justify-content:center;text-align:center;padding:5px;background:rgba(255,255,255,.86);border:3px solid rgba(255,255,255,.88);font-size:11px;font-weight:bold;color:#6d5380;pointer-events:none;box-shadow:0 7px 16px rgba(74,45,92,.15);animation:sticker 3s ease-in-out infinite;overflow:hidden}.sticker img{width:100%;height:100%;object-fit:cover;border-radius:16px}.sticker.fedde{width:58px;height:58px;background:rgba(255,255,255,.76)}.s1{left:4%;top:24%}.s2{right:4%;top:27%;animation-delay:.5s}.s3{left:8%;bottom:10%;animation-delay:1s}.s4{right:8%;bottom:10%;animation-delay:1.5s}.rain{position:fixed;left:0;top:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:4}.drop{position:absolute;top:-50px;animation:fall linear forwards;user-select:none}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes pulse{50%{transform:scale(1.04)}}@keyframes blink{50%{opacity:0}}@keyframes bloom{from{opacity:0;transform:scale(0) rotate(-25deg)}to{opacity:1;transform:scale(1) rotate(0)}}@keyframes sticker{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}@keyframes fall{from{transform:translateY(-50px) rotate(0);opacity:.95}to{transform:translateY(110vh) rotate(360deg);opacity:.7}}@media(max-width:480px){.title{font-size:32px}.name{font-size:24px}.birthday{font-size:20px}.envelope{width:290px;height:190px}.envbody:before{border-left-width:145px;border-top-width:95px;border-bottom-width:95px}.envbody:after{border-right-width:145px;border-top-width:95px;border-bottom-width:95px}.flap{border-left-width:145px;border-right-width:145px;border-top-width:112px}.seal{top:72px}.letter{width:min(360px,94vw);margin-top:24px}.sticker{width:64px;height:64px;font-size:9px}.sticker.fedde{width:48px;height:48px}.corner{font-size:34px}}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<div class="corner c1">🌹🌹</div><div class="corner c2">🌹🌹</div><div class="corner c3">🌹🌹</div><div class="corner c4">🌹🌹</div>
+<div class="word w1">🎉 FELIZ CUMPLEAÑOS</div><div class="word w2">FELIZ CUMPLEAÑOS 🎂</div><div class="word w3">💜 FELIZ CUMPLEAÑOS</div><div class="word w4">FELIZ CUMPLEAÑOS ✨</div>
+<div class="sticker s1"><img src="https://i.pinimg.com/736x/2b/97/51/2b9751fdf3717f23bc8e2a5bbf4d1861.jpg" alt="Rumi, Mira y Zoey de KPop Demon Hunters"></div><div class="sticker s2"><img src="https://images.teepublic.com/derived/production/designs/79078316_0/1755658742/i_m%3Apid_1918%2Cc_s_auto_br%2Cbc_000000%2Cs_630%2Cq_90.jpg" alt="Personajes de KPop Demon Hunters"></div><div class="sticker fedde s3">🌸<br>Fedde</div><div class="sticker fedde s4">🎀<br>Fedde</div>
+<section class="top">
+<p class="mini">Una pequeña sorpresa hecha con mucho cariño 💌</p>
+<h1 class="title">Para mi consentida 💜</h1>
+<h2 class="name">Para Valentina</h2>
+<p class="birthday">Feliz cumpleaños 🎂✨</p>
+<div class="stage">
+<div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Abrir sorpresa de cumpleaños">
+<div class="envbody"></div>
+<div class="flap"></div><div class="seal">💜</div>
+</div>
+<article class="letter" id="letter" aria-live="polite"><h2>💜 Feliz 6.º cumpleaños, Valentina 💜</h2><div class="message"><span id="typed"></span><span class="cursor" id="cursor"></span></div></article>
+<p class="hint" id="hint">💌 Toca el sobre para abrir tu sorpresa</p>
+<div class="controls"><button id="musicBtn" type="button" disabled>🎵 Música</button></div>
+<p class="emailstatus" id="emailStatus" aria-live="polite"></p>
+</div>
+</section>
+</main>
+<div class="rain" id="rain" aria-hidden="true"></div>
+<script>
+(function(){
+  'use strict';
+  var EMAILJS = {
+    serviceId: 'default_service',
+    templateId: 'YOUR_TEMPLATE_ID',
+    publicKey: 'YOUR_PUBLIC_KEY',
+    toEmail: 'mezajosue832@gmail.com'
+  };
+
+  var message = 'Hoy celebramos tus 6 añitos 🎂✨\n\nQue Dios te bendiga siempre, cuide cada uno de tus pasos y llene tu vida de alegría, amor, salud y muchísimas sonrisas.\n\nDeseo que este nuevo año de vida esté lleno de juegos, momentos bonitos, sueños y aventuras maravillosas.\n\nNunca olvides lo especial que eres.\n\nTe adoro muchísimo, mi consentida. 💜\n\n¡Feliz sexto cumpleaños, Valentina! 🎉🎂🌸';
+
+  var envelope = document.getElementById('envelope');
+  var letter = document.getElementById('letter');
+  var typed = document.getElementById('typed');
+  var cursor = document.getElementById('cursor');
+  var hint = document.getElementById('hint');
+  var musicBtn = document.getElementById('musicBtn');
+  var emailStatus = document.getElementById('emailStatus');
+  var rain = document.getElementById('rain');
+  var opened = false;
+  var typeIndex = 0;
+  var rainTimer = null;
+  var audioCtx = null;
+  var musicPlaying = false;
+  var musicTimers = [];
+
+  function typeText(){
+    if(typeIndex >= message.length){ cursor.style.display='none'; return; }
+    var ch = message.charAt(typeIndex++);
+    if(ch === '\n'){ typed.appendChild(document.createElement('br')); }
+    else { typed.appendChild(document.createTextNode(ch)); }
+    window.setTimeout(typeText, 34);
+  }
+
+  function drop(){
+    var list=['💜','💜','💟','💕','🎂','🧁','🍰'];
+    var el=document.createElement('span');
+    el.className='drop';
+    el.textContent=list[Math.floor(Math.random()*list.length)];
+    el.style.left=(Math.random()*100)+'%';
+    el.style.fontSize=(16+Math.random()*20)+'px';
+    var d=5+Math.random()*4;
+    el.style.animationDuration=d+'s';
+    rain.appendChild(el);
+    window.setTimeout(function(){ if(el.parentNode){el.parentNode.removeChild(el);} }, d*1000+200);
+  }
+
+  function startRain(){
+    if(rainTimer){return;}
+    var i;
+    for(i=0;i<16;i++){ window.setTimeout(drop,i*120); }
+    rainTimer=window.setInterval(drop,500);
+  }
+
+  var notes={C4:261.63,D4:293.66,E4:329.63,F4:349.23,G4:392,A4:440,Bb4:466.16,C5:523.25};
+  var song=[['G4',.3],['G4',.18],['A4',.48],['G4',.48],['C5',.48],['Bb4',.9],['G4',.3],['G4',.18],['A4',.48],['G4',.48],['D4',.48],['C4',.9],['G4',.3],['G4',.18],['G4',.48],['E4',.48],['C4',.48],['Bb4',.48],['A4',.9],['F4',.3],['F4',.18],['E4',.48],['C4',.48],['D4',.48],['C4',1]];
+
+  function clearMusicTimers(){
+    while(musicTimers.length){ window.clearTimeout(musicTimers.pop()); }
+  }
+
+  function playTone(freq,start,duration){
+    if(!audioCtx){return;}
+    var osc=audioCtx.createOscillator();
+    var gain=audioCtx.createGain();
+    osc.type='sine';
+    osc.frequency.value=freq;
+    gain.gain.setValueAtTime(0.0001,start);
+    gain.gain.exponentialRampToValueAtTime(0.12,start+0.03);
+    gain.gain.exponentialRampToValueAtTime(0.0001,start+Math.max(0.08,duration-0.04));
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(start); osc.stop(start+duration);
+  }
+
+  function playSong(){
+    var AudioContextClass=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContextClass){ musicBtn.textContent='Música no disponible'; musicBtn.disabled=true; return; }
+    if(!audioCtx){audioCtx=new AudioContextClass();}
+    var afterResume=function(){
+      musicPlaying=true; musicBtn.disabled=false; musicBtn.textContent='⏸️ Pausar música';
+      var t=audioCtx.currentTime+0.06;
+      var i;
+      for(i=0;i<song.length;i++){ playTone(notes[song[i][0]],t,song[i][1]*0.92); t+=song[i][1]; }
+      var wait=Math.max(1000,(t-audioCtx.currentTime)*1000+300);
+      musicTimers.push(window.setTimeout(function(){ if(musicPlaying){playSong();} },wait));
+    };
+    if(audioCtx.state==='suspended'){
+      var p=audioCtx.resume();
+      if(p&&typeof p.then==='function'){p.then(afterResume).catch(function(){musicBtn.disabled=false;musicBtn.textContent='▶️ Reproducir música';});}
+      else{afterResume();}
+    }else{afterResume();}
+  }
+
+  function pauseSong(){
+    musicPlaying=false; clearMusicTimers();
+    if(audioCtx&&audioCtx.state==='running'){audioCtx.suspend();}
+    musicBtn.textContent='▶️ Reproducir música';
+  }
+
+  musicBtn.addEventListener('click',function(){
+    if(musicPlaying){pauseSong();}else{playSong();}
+  });
+
+  function sendEmail(){
+    if(!EMAILJS.templateId || !EMAILJS.publicKey || EMAILJS.templateId==='YOUR_TEMPLATE_ID' || EMAILJS.publicKey==='YOUR_PUBLIC_KEY'){
+      emailStatus.textContent='📧 EmailJS está listo; falta pegar tu Template ID y Public Key.';
+      return;
+    }
+    var payload={
+      service_id:EMAILJS.serviceId,
+      template_id:EMAILJS.templateId,
+      user_id:EMAILJS.publicKey,
+      template_params:{
+        to_email:EMAILJS.toEmail,
+        subject:'Valentina abrió su sorpresa 🎂',
+        message:'Valentina acaba de abrir el sobre de su página de cumpleaños.',
+        fecha:new Date().toLocaleString('es-NI')
+      }
+    };
+    if(!window.fetch){emailStatus.textContent='📧 Abre la página desde GitHub Pages para enviar el aviso.';return;}
+    fetch('https://api.emailjs.com/api/v1.0/email/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){if(!r.ok){throw new Error('EmailJS');}emailStatus.textContent='💌 Aviso enviado a mezajosue832@gmail.com.';})
+      .catch(function(){emailStatus.textContent='📧 No se pudo enviar el aviso. Revisa EmailJS o abre la página desde GitHub Pages.';});
+  }
+
+  function openEnvelope(){
+    if(opened){return;}
+    opened=true;
+    envelope.className+=' open';
+    envelope.setAttribute('aria-disabled','true');
+    hint.textContent='💜 Una sorpresa hecha especialmente para ti 💜';
+    letter.className += ' show';
+    startRain();
+    musicBtn.disabled=false;
+    try{playSong();}catch(e){musicBtn.textContent='▶️ Reproducir música';}
+    window.setTimeout(function(){
+      typeText();
+      if(letter && letter.scrollIntoView){letter.scrollIntoView({behavior:'smooth',block:'center'});}
+    },650);
+    sendEmail();
+  }
+
+  envelope.addEventListener('click',openEnvelope);
+  envelope.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope();}});
+})();
+</script>
+</body>
+</html>
