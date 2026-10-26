@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eadcff" />
+  <title>Feliz 6.º cumpleaños, Valentina 💜</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root{
+      --rosa:#ffd8e9;
+      --rosa-2:#f6b8d6;
+      --azul:#cfeaff;
+      --morado:#e1d1ff;
+      --morado-2:#9b6fd1;
+      --morado-3:#73509e;
+      --papel:#fffafd;
+      --texto:#5d4a68;
+      --rojo:#d84d5d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body{
+      min-height:100vh;
+      overflow-x:hidden;
+      font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+      color:var(--texto);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.92), transparent 30%),
+        radial-gradient(circle at 85% 85%, rgba(255,255,255,.72), transparent 34%),
+        linear-gradient(135deg, var(--rosa), var(--morado), var(--azul));
+    }
+
+    button{ font:inherit; }
+
+    .pagina{
+      position:relative;
+      min-height:100vh;
+      padding:42px 18px 120px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      overflow:hidden;
+    }
+
+    .contenido{
+      width:min(760px,100%);
+      position:relative;
+      z-index:10;
+      text-align:center;
+    }
+
+    .pretitle{
+      margin-top:18px;
+      font-size:clamp(1rem,3vw,1.2rem);
+      color:#8a689d;
+      letter-spacing:.06em;
+      animation:entrada .9s ease both;
+    }
+
+    .titulo{
+      margin-top:10px;
+      font-size:clamp(2.25rem,8vw,4.7rem);
+      line-height:1.04;
+      color:#9a5fa5;
+      text-shadow:0 4px 18px rgba(255,255,255,.72);
+      animation:entrada 1s .08s ease both;
+    }
+
+    .nombre{
+      margin-top:8px;
+      font-size:clamp(1.65rem,5vw,2.7rem);
+      color:#d1659a;
+      animation:entrada 1s .18s ease both;
+    }
+
+    .cumple{
+      margin:8px 0 44px;
+      font-size:clamp(1.35rem,4vw,2.05rem);
+      color:#648fc4;
+      animation:entrada 1s .28s ease both;
+    }
+
+    @keyframes entrada{
+      from{ opacity:0; transform:translateY(-16px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    .zona-sobre{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      min-height:520px;
+    }
+
+    .sobre{
+      position:relative;
+      width:min(370px,88vw);
+      aspect-ratio:1.5 / 1;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+      perspective:1000px;
+      animation:flotar 3s ease-in-out infinite;
+      filter:drop-shadow(0 22px 24px rgba(92,61,119,.22));
+    }
+
+    .sobre:focus-visible{
+      outline:4px solid rgba(115,80,158,.45);
+      outline-offset:10px;
+      border-radius:18px;
+    }
+
+    .sobre-base{
+      position:absolute;
+      inset:0;
+      border-radius:12px 12px 24px 24px;
+      background:linear-gradient(145deg,#f8c3dc,#dfc5ff);
+      overflow:hidden;
+    }
+
+    .sobre-base::before{
+      content:"";
+      position:absolute;
+      inset:auto auto 0 0;
+      width:0;height:0;
+      border-left:185px solid #f3afd0;
+      border-top:123px solid transparent;
+      border-bottom:123px solid #f3afd0;
+    }
+
+    .sobre-base::after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0 auto;
+      width:0;height:0;
+      border-right:185px solid #e5b8ee;
+      border-top:123px solid transparent;
+      border-bottom:123px solid #e5b8ee;
+    }
+
+    .solapa{
+      position:absolute;
+      left:0; top:0;
+      width:0; height:0;
+      border-left:185px solid transparent;
+      border-right:185px solid transparent;
+      border-top:146px solid #cab1f7;
+      transform-origin:top center;
+      transition:transform .9s ease;
+      z-index:6;
+    }
+
+    .sello{
+      position:absolute;
+      left:50%; top:105px;
+      translate:-50% 0;
+      z-index:8;
+      width:64px;height:64px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#9566cb;
+      color:white;
+      font-size:31px;
+      box-shadow:0 7px 18px rgba(84,51,116,.28);
+      transition:opacity .35s ease, transform .35s ease;
+    }
+
+    .carta{
+      position:absolute;
+      left:5%;
+      bottom:14px;
+      width:90%;
+      min-height:300px;
+      padding:28px 24px 30px;
+      border:1px solid rgba(155,111,209,.18);
+      border-radius:22px;
+      background:
+        radial-gradient(circle at top right, rgba(225,209,255,.55), transparent 28%),
+        linear-gradient(#fff,#fff8fc);
+      box-shadow:0 15px 36px rgba(90,64,111,.16);
+      opacity:0;
+      transform:translateY(6px) scale(.92);
+      transition:transform 1.1s ease, opacity .65s ease;
+      z-index:2;
+    }
+
+    .carta h2{
+      color:#a75b9a;
+      font-size:1.68rem;
+      margin-bottom:16px;
+    }
+
+    .texto{
+      min-height:205px;
+      font-size:1.08rem;
+      line-height:1.72;
+      white-space:pre-wrap;
+    }
+
+    .cursor{
+      display:inline-block;
+      width:2px;
+      height:1em;
+      background:#8d63bb;
+      vertical-align:-.08em;
+      margin-left:2px;
+      animation:blink .7s infinite;
+    }
+
+    @keyframes blink{50%{opacity:0}}
+
+    .sobre.abierto{
+      animation:none;
+      cursor:default;
+    }
+
+    .sobre.abierto .solapa{
+      transform:rotateX(180deg);
+      z-index:1;
+    }
+
+    .sobre.abierto .sello{
+      opacity:0;
+      transform:scale(.7);
+    }
+
+    .sobre.abierto .carta{
+      opacity:1;
+      transform:translateY(-250px) scale(1);
+      z-index:5;
+    }
+
+    @keyframes flotar{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-11px)}
+    }
+
+    .instruccion{
+      margin-top:28px;
+      color:#775b89;
+      font-weight:700;
+      animation:pulso 1.6s infinite;
+    }
+
+    @keyframes pulso{50%{transform:scale(1.045)}}
+
+    .controles{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .control{
+      min-height:44px;
+      border:1px solid rgba(115,80,158,.22);
+      background:rgba(255,255,255,.72);
+      color:#6d4f82;
+      border-radius:999px;
+      padding:10px 16px;
+      cursor:pointer;
+      box-shadow:0 7px 18px rgba(87,58,105,.08);
+    }
+
+    .control:hover{background:white}
+    .control:focus-visible{outline:3px solid rgba(115,80,158,.32);outline-offset:2px}
+
+    .estado-email{
+      margin-top:10px;
+      min-height:1.35em;
+      font-size:.86rem;
+      color:#806a8c;
+    }
+
+    /* Rosas floreciendo */
+    .rama{
+      position:absolute;
+      z-index:3;
+      pointer-events:none;
+      font-size:clamp(30px,6vw,54px);
+      filter:drop-shadow(0 6px 8px rgba(128,38,57,.12));
+    }
+    .r1{top:12px;left:10px;animation:florecer 1.7s .2s ease both}
+    .r2{top:12px;right:10px;animation:florecer 1.7s .5s ease both}
+    .r3{bottom:14px;left:10px;animation:florecer 1.7s .8s ease both}
+    .r4{bottom:14px;right:10px;animation:florecer 1.7s 1.1s ease both}
+
+    @keyframes florecer{
+      from{opacity:0;transform:scale(0) rotate(-28deg)}
+      to{opacity:1;transform:scale(1) rotate(0)}
+    }
+
+    .feliz-lateral{
+      position:absolute;
+      z-index:2;
+      pointer-events:none;
+      font-weight:800;
+      color:rgba(126,83,154,.34);
+      font-size:clamp(.82rem,2.3vw,1.1rem);
+      letter-spacing:.04em;
+    }
+    .f1{left:4%;top:43%;transform:rotate(-11deg)}
+    .f2{right:4%;top:47%;transform:rotate(10deg)}
+    .f3{left:8%;bottom:18%;transform:rotate(7deg)}
+    .f4{right:8%;bottom:16%;transform:rotate(-7deg)}
+
+    /* Stickers pequeños: usa tus imágenes en /assets. Si faltan, aparece un fallback bonito. */
+    .sticker-box{
+      position:absolute;
+      z-index:4;
+      width:72px;
+      min-height:72px;
+      pointer-events:none;
+      animation:stickerFloat 3.2s ease-in-out infinite;
+    }
+    .sticker-box img{
+      width:72px;height:72px;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 5px 7px rgba(60,40,90,.15));
+    }
+    .fallback{
+      width:72px;height:72px;
+      border-radius:22px;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:6px;
+      text-align:center;
+      font-size:.69rem;
+      font-weight:800;
+      color:#6f5284;
+      background:rgba(255,255,255,.66);
+      border:2px solid rgba(155,111,209,.18);
+      backdrop-filter:blur(3px);
+    }
+    .s1{left:4%;top:25%}
+    .s2{right:4%;top:28%;animation-delay:.7s}
+    .s3{left:8%;bottom:10%;animation-delay:1.1s}
+    .s4{right:8%;bottom:10%;animation-delay:1.5s}
+
+    @keyframes stickerFloat{
+      0%,100%{transform:translateY(0) rotate(-3deg)}
+      50%{transform:translateY(-9px) rotate(3deg)}
+    }
+
+    /* Lluvia */
+    .lluvia{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+      z-index:30;
+    }
+    .caida{
+      position:absolute;
+      top:-60px;
+      user-select:none;
+      animation:caer linear forwards;
+      will-change:transform,opacity;
+    }
+    @keyframes caer{
+      from{transform:translateY(-80px) rotate(0);opacity:.95}
+      to{transform:translateY(115vh) rotate(360deg);opacity:.68}
+    }
+
+    @media(max-width:600px){
+      .pagina{padding-top:24px;padding-bottom:170px}
+      .cumple{margin-bottom:36px}
+      .zona-sobre{min-height:560px}
+      .sobre{width:300px}
+      .solapa{border-left-width:150px;border-right-width:150px;border-top-width:120px}
+      .sobre-base::before{border-left-width:150px;border-top-width:100px;border-bottom-width:100px}
+      .sobre-base::after{border-right-width:150px;border-top-width:100px;border-bottom-width:100px}
+      .sello{top:80px}
+      .carta{min-height:330px;padding:24px 18px}
+      .sobre.abierto .carta{transform:translateY(-280px) scale(1)}
+      .texto{font-size:1rem}
+      .sticker-box,.sticker-box img,.fallback{width:54px;height:54px}
+      .fallback{font-size:.58rem;border-radius:16px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina">
+    <div class="rama r1">🌹🌹</div>
+    <div class="rama r2">🌹🌹</div>
+    <div class="rama r3">🌹🌹</div>
+    <div class="rama r4">🌹🌹</div>
+
+    <div class="feliz-lateral f1">🎉 FELIZ CUMPLEAÑOS</div>
+    <div class="feliz-lateral f2">FELIZ CUMPLEAÑOS 🎂</div>
+    <div class="feliz-lateral f3">💜 FELIZ CUMPLEAÑOS</div>
+    <div class="feliz-lateral f4">FELIZ CUMPLEAÑOS ✨</div>
+
+    <div class="sticker-box s1">
+      <img src="assets/monster1.png" alt="Sticker Monster Hunters">
+      <div class="fallback">✨ Monster Hunters ✨</div>
+    </div>
+    <div class="sticker-box s2">
+      <img src="assets/monster2.png" alt="Sticker Monster Hunters">
+      <div class="fallback">💜 Monster Hunters 💜</div>
+    </div>
+    <div class="sticker-box s3">
+      <img src="assets/fedde1.png" alt="Sticker Fedde">
+      <div class="fallback">🌸 Fedde 🌸</div>
+    </div>
+    <div class="sticker-box s4">
+      <img src="assets/fedde2.png" alt="Sticker Fedde">
+      <div class="fallback">🎀 Fedde 🎀</div>
+    </div>
+
+    <section class="contenido">
+      <p class="pretitle">Una pequeña sorpresa hecha con mucho cariño 💌</p>
+      <h1 class="titulo">Para mi consentida 💜</h1>
+      <h2 class="nombre">Para Valentina</h2>
+      <p class="cumple">Feliz cumpleaños 🎂✨</p>
+
+      <div class="zona-sobre">
+        <button class="sobre" id="sobre" type="button" aria-label="Abrir la sorpresa de cumpleaños">
+          <div class="sobre-base"></div>
+
+          <article class="carta" aria-live="polite">
+            <h2>💜 Feliz 6.º cumpleaños, Valentina 💜</h2>
+            <p class="texto"><span id="textoEscrito"></span><span class="cursor" id="cursor"></span></p>
+          </article>
+
+          <div class="solapa"></div>
+          <div class="sello" aria-hidden="true">💜</div>
+        </button>
+
+        <p class="instruccion" id="instruccion">💌 Toca el sobre para abrir tu sorpresa</p>
+
+        <div class="controles">
+          <button class="control" id="musicaBtn" type="button" disabled>🎵 Música</button>
+        </div>
+
+        <p class="estado-email" id="estadoEmail" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="lluvia" id="lluvia" aria-hidden="true"></div>
+
+  <script>
+    // ============================================================
+    // EMAILJS — NOTIFICACIÓN AL ABRIR EL SOBRE
+    // ============================================================
+    // Tu correo de destino ya queda fijado aquí.
+    // Solo debes pegar los datos de TU cuenta EmailJS:
+    // 1) Service ID
+    // 2) Template ID
+    // 3) Public Key
+    //
+    // Si tu servicio conectado está marcado como predeterminado en EmailJS,
+    // puedes dejar serviceId como "default_service".
+    const EMAILJS_CONFIG = {
+      serviceId: "default_service",
+      templateId: "YOUR_TEMPLATE_ID",
+      publicKey: "YOUR_PUBLIC_KEY",
+      toEmail: "mezajosue832@gmail.com"
+    };
+
+    // ============================================================
+    // TEXTO DE LA CARTA
+    // ============================================================
+    const mensaje = `Hoy celebramos tus 6 añitos 🎂✨
+
+Que Dios te bendiga siempre, cuide cada uno de tus pasos y llene tu vida de alegría, amor, salud y muchísimas sonrisas.
+
+Deseo que este nuevo año de vida esté lleno de juegos, momentos bonitos, sueños y aventuras maravillosas.
+
+Nunca olvides lo especial que eres.
+
+Te adoro muchísimo, mi consentida. 💜
+
+¡Feliz sexto cumpleaños, Valentina! 🎉🎂🌸`;
+
+    const sobre = document.getElementById("sobre");
+    const textoEscrito = document.getElementById("textoEscrito");
+    const cursor = document.getElementById("cursor");
+    const lluvia = document.getElementById("lluvia");
+    const instruccion = document.getElementById("instruccion");
+    const musicaBtn = document.getElementById("musicaBtn");
+    const estadoEmail = document.getElementById("estadoEmail");
+
+    let abierto = false;
+    let indice = 0;
+    let lluviaInterval = null;
+
+    // ============================================================
+    // FALLBACK DE STICKERS SI NO HAS SUBIDO LAS IMÁGENES
+    // ============================================================
+    document.querySelectorAll(".sticker-box img").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        const fallback = img.nextElementSibling;
+        if (fallback) fallback.style.display = "flex";
+      });
+    });
+
+    // ============================================================
+    // ESCRITURA PROGRESIVA
+    // ============================================================
+    function escribirMensaje(){
+      if (indice >= mensaje.length){
+        cursor.style.display = "none";
+        return;
+      }
+
+      const caracter = mensaje.charAt(indice);
+      if (caracter === "\n"){
+        textoEscrito.appendChild(document.createElement("br"));
+      } else {
+        textoEscrito.appendChild(document.createTextNode(caracter));
+      }
+
+      indice += 1;
+      setTimeout(escribirMensaje, 38);
+    }
+
+    // ============================================================
+    // MÚSICA INSTRUMENTAL: melodía de cumpleaños con Web Audio
+    // Comienza después del toque, cumpliendo las reglas de autoplay.
+    // ============================================================
+    let audioCtx = null;
+    let musicaActiva = false;
+    let musicaTimeouts = [];
+
+    const NOTAS = {
+      C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23,
+      G4: 392.00, A4: 440.00, Bb4: 466.16, C5: 523.25
+    };
+
+    const melodia = [
+      ["G4",.30],["G4",.18],["A4",.48],["G4",.48],["C5",.48],["Bb4",.90],
+      ["G4",.30],["G4",.18],["A4",.48],["G4",.48],["D4",.48],["C4",.90],
+      ["G4",.30],["G4",.18],["G4",.48],["E4",.48],["C4",.48],["Bb4",.48],["A4",.90],
+      ["F4",.30],["F4",.18],["E4",.48],["C4",.48],["D4",.48],["C4",1.00]
+    ];
+
+    function tocarNota(frecuencia, inicio, duracion){
+      if (!audioCtx) return;
+
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.value = frecuencia;
+
+      gain.gain.setValueAtTime(0.0001, inicio);
+      gain.gain.exponentialRampToValueAtTime(0.13, inicio + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, inicio + Math.max(0.08, duracion - 0.04));
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(inicio);
+      osc.stop(inicio + duracion);
+    }
+
+    async function iniciarMusica(){
+      if (!audioCtx){
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (audioCtx.state === "suspended"){
+        await audioCtx.resume();
+      }
+
+      musicaActiva = true;
+      musicaBtn.disabled = false;
+      musicaBtn.textContent = "⏸️ Pausar música";
+
+      let tiempo = audioCtx.currentTime + 0.08;
+      melodia.forEach(([nota, dur]) => {
+        tocarNota(NOTAS[nota], tiempo, dur * 0.95);
+        tiempo += dur;
+      });
+
+      const totalMs = Math.max(1000, (tiempo - audioCtx.currentTime) * 1000);
+      const id = setTimeout(() => {
+        if (musicaActiva) iniciarMusica();
+      }, totalMs + 250);
+
+      musicaTimeouts.push(id);
+    }
+
+    async function pausarMusica(){
+      musicaActiva = false;
+      musicaTimeouts.forEach(clearTimeout);
+      musicaTimeouts = [];
+      if (audioCtx && audioCtx.state === "running"){
+        await audioCtx.suspend();
+      }
+      musicaBtn.textContent = "▶️ Reproducir música";
+    }
+
+    musicaBtn.addEventListener("click", async () => {
+      if (!audioCtx || audioCtx.state === "suspended" || !musicaActiva){
+        await iniciarMusica();
+      } else {
+        await pausarMusica();
+      }
+    });
+
+    // ============================================================
+    // CORREO: EmailJS avisa una sola vez cuando se abre el sobre
+    // ============================================================
+    async function enviarAviso(){
+      const { serviceId, templateId, publicKey, toEmail } = EMAILJS_CONFIG;
+
+      const faltanDatos =
+        !serviceId ||
+        !templateId ||
+        !publicKey ||
+        templateId === "YOUR_TEMPLATE_ID" ||
+        publicKey === "YOUR_PUBLIC_KEY";
+
+      if (faltanDatos){
+        estadoEmail.textContent =
+          "📧 EmailJS está preparado. Falta pegar Template ID y Public Key.";
+        return;
+      }
+
+      const datos = {
+        service_id: serviceId,
+        template_id: templateId,
+        user_id: publicKey,
+        template_params: {
+          to_email: toEmail,
+          email: toEmail,
+          recipient: toEmail,
+          subject: "Valentina abrió su sorpresa 🎂",
+          title: "Valentina abrió su sorpresa 🎂",
+          name: "Sorpresa de cumpleaños de Valentina",
+          message: "Valentina acaba de abrir el sobre de su página de cumpleaños.",
+          fecha: new Date().toLocaleString("es-NI"),
+          opened_at: new Date().toLocaleString("es-NI")
+        }
+      };
+
+      try{
+        const respuesta = await fetch(
+          "https://api.emailjs.com/api/v1.0/email/send",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datos)
+          }
+        );
+
+        if (!respuesta.ok){
+          const detalle = await respuesta.text();
+          throw new Error(detalle || "Error de EmailJS");
+        }
+
+        estadoEmail.textContent = "💌 Aviso enviado a mezajosue832@gmail.com.";
+      } catch (error){
+        console.error("EmailJS:", error);
+        estadoEmail.textContent =
+          "📧 No se pudo enviar el aviso. Revisa los datos de EmailJS.";
+      }
+    }
+
+    // ============================================================
+    // LLUVIA DE CORAZONES Y PASTELES
+    // ============================================================
+    const simbolos = ["💜","💜","💟","💕","🎂","🧁","🍰"];
+
+    function crearCaida(){
+      const item = document.createElement("div");
+      item.className = "caida";
+      item.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
+      item.style.left = `${Math.random() * 100}%`;
+      item.style.fontSize = `${16 + Math.random() * 22}px`;
+
+      const duracion = 5 + Math.random() * 5;
+      item.style.animationDuration = `${duracion}s`;
+
+      lluvia.appendChild(item);
+      setTimeout(() => item.remove(), duracion * 1000);
+    }
+
+    function iniciarLluvia(){
+      if (lluviaInterval) return;
+
+      for (let i = 0; i < 18; i++){
+        setTimeout(crearCaida, i * 110);
+      }
+
+      lluviaInterval = setInterval(crearCaida, 430);
+    }
+
+    // ============================================================
+    // ABRIR SOBRE
+    // ============================================================
+    async function abrirSorpresa(){
+      if (abierto) return;
+      abierto = true;
+
+      sobre.classList.add("abierto");
+      instruccion.textContent = "💜 Una sorpresa hecha especialmente para ti 💜";
+      iniciarLluvia();
+
+      // El clic del sobre permite iniciar audio sin bloqueo del navegador.
+      try{
+        await iniciarMusica();
+      } catch (_) {
+        musicaBtn.disabled = false;
+        musicaBtn.textContent = "▶️ Reproducir música";
+      }
+
+      setTimeout(escribirMensaje, 850);
+      enviarAviso();
+    }
+
+    sobre.addEventListener("click", abrirSorpresa);
+  </script>
+</body>
+</html>
